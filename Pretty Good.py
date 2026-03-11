@@ -27,6 +27,8 @@ app = Flask(__name__)
 sock = Sock(app)
 client = Client(twilioID, twilioAuth)
 buffer = b""
+
+
 model = whisper.load_model("base")
 
 

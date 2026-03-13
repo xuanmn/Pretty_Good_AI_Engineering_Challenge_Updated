@@ -12,7 +12,6 @@ import audioop
 import threading
 import time
 import wave
-import whisper
 
 load_dotenv()
 

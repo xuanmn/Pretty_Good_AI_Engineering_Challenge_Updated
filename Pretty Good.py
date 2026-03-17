@@ -14,7 +14,6 @@ import time
 import wave
 
 load_dotenv()
-
 twilioID = os.getenv("TWILIO_ACCOUNT_SID")
 twilioNumber = os.getenv("TWILIO_CALLER_ID")
 twilioAuth = os.getenv("TWILIO_AUTH_TOKEN")

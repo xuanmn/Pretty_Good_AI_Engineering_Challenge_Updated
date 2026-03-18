@@ -28,6 +28,8 @@ client = Client(twilioID, twilioAuth)
 buffer = b""
 # model = whisper.load_model("base")
 
+#
+
 
 def print_buffer_periodically():
     global buffer

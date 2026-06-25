@@ -5,7 +5,6 @@ import os
 
 app = Flask(__name__)
 
-
 twilio_sid = os.environ.get("TWILIO_ACCOUNT_SID")
 twilio_auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
 twilioNumber ='+15092603929'

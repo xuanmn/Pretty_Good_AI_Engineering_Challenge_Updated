@@ -2,14 +2,16 @@ from twilio.rest import Client
 from flask import Flask, request, redirect
 from twilio.twiml.voice_response import VoiceResponse, Gather
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 twilio_sid = os.environ.get("TWILIO_ACCOUNT_SID")
 twilio_auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
-twilioNumber ='+15092603929'
-# testNumber = '18054398008'
-testNumber = '14255821282'
-twilioURL = 'https://jangly-jacquie-partially.ngrok-free.dev/voice'
+twilioNumber = os.environ.get("TWILIO_NUMBER")
+testNumber = os.environ.get("TEST_NUMBER")
+twilioURLVoice = os.environ.get("TWILIO_URL_VOICE")
 
 client = Client(twilio_sid, twilio_auth_token)
 
@@ -51,6 +53,6 @@ if __name__ == "__main__":
     call = client.calls.create(
         to = testNumber,
         from_ = twilioNumber,
-        url = twilioURL
+        url = twilioURLVoice
     )
     app.run(port=5000)

@@ -17,7 +17,6 @@ client = Client(twilio_sid, twilio_auth_token)
 
 @app.route("/voice", methods=['POST'])
 
-
 def voice():
     """Respond to incoming phone calls with a simple text message."""
     # Start our TwiML response

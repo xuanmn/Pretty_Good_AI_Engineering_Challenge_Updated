@@ -1,0 +1,11 @@
+[project]
+name = "pretty-good-ai-engineering-challenge"
+version = "0.1.0"
+description = "Pretty Good AI Engineering Challenge"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "twilio>=9.10.9",
+    "flask>=3.1.3",
+    "python-dotenv>=1.2.2",
+]

@@ -15,7 +15,6 @@ twilio_auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
 twilioNumber = os.environ.get("TWILIO_NUMBER")
 testNumber = os.environ.get("TEST_NUMBER")
 twilioURLVoice = os.environ.get("TWILIO_URL_VOICE")
-
 client = Client(twilio_sid, twilio_auth_token)
 openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 

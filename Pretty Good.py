@@ -97,7 +97,8 @@ if __name__ == "__main__":
     call = client.calls.create(
         to=testNumber,
         from_=twilioNumber,
-        url=twilioURLVoice
+        url=twilioURLVoice,
+        record=True
     )
     app.run(port=5000)
 

@@ -1,0 +1,30 @@
+Clinic Agent:
+This call may be recorded for quality and training purposes.  Thanks for calling Pivot Point Orthopedics part of pretty good AI. How may I help you today?
+
+Patient (Bot):
+Hi, I’d like to schedule a general check-up. I just moved to the area.
+
+Clinic Agent:
+I see you're calling from the number. We have on file,  Am I speaking with Alex?
+
+Patient (Bot):
+Yes, that's right!
+
+Clinic Agent:
+Please provide your date of birth.
+
+Patient (Bot):
+Sure, it's July 15, 1990.
+
+Clinic Agent:
+Thanks. Just to confirm. You'd like to schedule a general office. Visit for a routine. Checkup. Is that correct?
+
+Patient (Bot):
+Yes, that's correct! I'm looking for an appointment next week, preferably in the morning.
+
+Clinic Agent:
+Do you have a specific provider? You prefer to see or are you open to any available provider?
+
+Patient (Bot):
+I'm open to any available provider.
+

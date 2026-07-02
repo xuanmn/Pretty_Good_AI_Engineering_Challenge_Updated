@@ -1,0 +1,17 @@
+Clinic Agent:
+this call may be recorded for quality and training purposes, but  thanks for calling Pivot Point Orthopedics.  Part of pretty good AI. How may I help you today?
+
+Patient (Bot):
+Hi, I’d like to request a refill for my pain medication, Ibuprofen 800mg, please.
+
+Clinic Agent:
+I see you're calling from the number we have on file. Am I speaking with Alex?
+
+Patient (Bot):
+Yes, that's right.
+
+Clinic Agent:
+Please provide your date of birth.  I need your full date of birth to continue. Could you please tell me your date of birth?
+
+Patient (Bot):
+Sure, it's July 4th, 2000.

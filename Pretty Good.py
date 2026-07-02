@@ -3,6 +3,7 @@ from flask import Flask, request, redirect, session
 from twilio.twiml.voice_response import VoiceResponse, Gather
 import os
 import urllib.request
+import base64
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -19,14 +20,49 @@ twilioURLVoice = os.environ.get("TWILIO_URL_VOICE")
 client = Client(twilio_sid, twilio_auth_token)
 openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
+
+# 1. Simple Appointment Scheduling
+# SYSTEM_PROMPT = (
+#     "You are simulating a patient named Alex calling your doctor's clinic. "
+#     "Your date of birth is July 4th, 2000. "
+#     "Your goal is to reschedule your existing appointment from next Thursday at 2 PM to any time on Friday morning. "
+#     "You are speaking on a phone call with an AI receptionist. "
+#     "Keep your responses short, conversational, and extremely natural for a voice call (typically 1-2 sentences maximum). "
+#     "Do not output markdown, lists, bullet points, or special characters. Speak directly as the patient."
+# )
+
+# 2. Canceling an Appointment
+# SYSTEM_PROMPT = (
+#     "You are simulating a patient named Alex. Your date of birth is July 4th, 2000. "
+#     "Your goal is to completely cancel your upcoming appointment for tomorrow. "
+#     "You got called into work unexpectedly and you don't know your schedule yet, so you refuse to reschedule right now. "
+#     "You will tell them you will just call back another time. "
+#     "You are speaking on a phone call with an AI receptionist. "
+#     "Keep your responses short, conversational, and extremely natural for a voice call (typically 1-2 sentences maximum). "
+#     "Do not output markdown, lists, bullet points, or special characters. Speak directly as the patient."
+# )
+
+# 3. Medication Refill Request
 SYSTEM_PROMPT = (
-    "You are simulating a new patient calling a doctor's clinic for the first time. "
-    "Your goal is to schedule a general check-up because you recently moved to the area. "
-    "You want an appointment sometime next week, preferably in the morning. "
+    "You are simulating a patient named Alex. Your date of birth is July 4th, 2000. "
+    "Your goal is to request a prescription refill for your pain medication (Ibuprofen 800mg). "
+    "You want them to send it to the CVS pharmacy on Main Street. "
     "You are speaking on a phone call with an AI receptionist. "
     "Keep your responses short, conversational, and extremely natural for a voice call (typically 1-2 sentences maximum). "
     "Do not output markdown, lists, bullet points, or special characters. Speak directly as the patient."
 )
+
+# 4. General Questions (Insurance & Hours)
+# SYSTEM_PROMPT = (
+#     "You are simulating a patient named Alex. Your date of birth is July 4th, 2000. "
+#     "You are calling to schedule a follow-up visit, but you are very distracted because your dog is barking. "
+#     "During the conversation, you will randomly ask the agent to 'wait, hold on a second' or 'can you repeat that?' at least twice. "
+#     "You are speaking on a phone call with an AI receptionist. "
+#     "Keep your responses short, conversational, and extremely natural for a voice call (typically 1-2 sentences maximum). "
+#     "Do not output markdown, lists, bullet points, or special characters. Speak directly as the patient."
+# )
+
+
 
 
 # Dictionary to hold conversation histories by CallSid
@@ -132,7 +168,20 @@ def recording():
         filename = f"recording_{call_sid}.mp3"
         print(f"\n⬇️ Downloading recording to {filename}...")
         try:
-            urllib.request.urlretrieve(mp3_url, filename)
+            # Create a request object
+            req = urllib.request.Request(mp3_url)
+            
+            # Twilio media URLs require HTTP Basic Auth
+            account_sid = os.environ.get("TWILIO_ACCOUNT_SID")
+            auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
+            auth_string = f"{account_sid}:{auth_token}"
+            base64_auth = base64.b64encode(auth_string.encode('ascii')).decode('ascii')
+            req.add_header("Authorization", f"Basic {base64_auth}")
+            
+            # Download the file
+            with urllib.request.urlopen(req) as response, open(filename, 'wb') as out_file:
+                out_file.write(response.read())
+                
             print(f"✅ Successfully saved {filename}")
         except Exception as e:
             print(f"❌ Failed to download recording: {e}")
@@ -152,4 +201,3 @@ if __name__ == "__main__":
         record=True
     )
     app.run(port=5000)
-

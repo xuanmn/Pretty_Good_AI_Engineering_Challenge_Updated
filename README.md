@@ -50,4 +50,4 @@ The system is built on a lightweight Flask backend that acts as a webhook receiv
 - **Flask**: Chosen for its simplicity and speed in spinning up webhook endpoints, allowing rapid iteration.
 - **Twilio `<Gather>`**: By leveraging Twilio's native speech-to-text (ASR) via `<Gather>`, we avoid the latency and complexity of streaming raw audio via WebSockets or dealing with external ASR services.
 - **OpenAI (`gpt-4o-mini`)**: Provides excellent reasoning, adherence to system prompts (simulating the patient persona), and very low latency response times, which is critical for maintaining natural conversational flow over the phone.
-- **Session State**: Flask sessions are used to maintain the conversation history for each unique call, ensuring the LLM has full context of the interaction without needing a dedicated database.
+- **State Management**: An in-memory dictionary mapped to Twilio's unique `CallSid` is used to maintain the conversation history for each unique call. This ensures the LLM has full context of the interaction without needing a dedicated database, and allows background webhooks (like recording downloads) to access the state reliably.

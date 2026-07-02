@@ -1,0 +1,59 @@
+Clinic Agent:
+this call may be recorded for quality and training purposes, but  Thanks for calling pivik Point Orthopedics part of pretty good. AI how may I help you today?
+
+Patient (Bot):
+Hi, I’d like to schedule a general check-up, please. I just moved to the area.
+
+Clinic Agent:
+If you're calling from the number we have on file. Am I speaking with Alex?
+
+Patient (Bot):
+No, this is not Alex. This is a new patient looking to set up an appointment.
+
+Clinic Agent:
+I need your first and last name, along with your date of birth to continue. Could you share those details?
+
+Patient (Bot):
+Sure, my name is Jamie Smith, and my date of birth is March 12, 1990.
+
+Clinic Agent:
+Just to confirm, I have your name is Jamie Smith and your date of birth as March 12th 1990. Is that correct? If so, could you please spell your first? And last name for me?
+
+Patient (Bot):
+Yes, that’s correct. My first name is spelled J-A-M-I-E and my last name is S-M-I-T-H.
+
+Clinic Agent:
+Would you like to use your phone number to look up your record if so, please provide the number you have on file with us if you're not sure. Let me know and we can confirm your name and date of birth again.
+
+Patient (Bot):
+I’m not sure if you have my number on file since I'm a new patient. I can confirm my name and date of birth again if needed.
+
+Clinic Agent:
+Could you please confirm your first and last name by spelling them out again along with your date of birth?
+
+Patient (Bot):
+Of course. My name is spelled J-A-M-I-E S-M-I-T-H, and my date of birth is March 12, 1990.
+
+Clinic Agent:
+Could you please spell your full first name as well? I only heard the last part and just to confirm your date of birth is March 12th 1990. Correct.
+
+Patient (Bot):
+Sure! My full first name is spelled J-A-M-I-E, and yes, my date of birth is March 12, 1990.
+
+Clinic Agent:
+I have your name. As Jamie Smith, your date of birth as March 12th 1990 and your phone. Number as 509260 3929 is all of that, correct?
+
+Patient (Bot):
+No, I haven’t provided my phone number yet. I can give you my number if you need it.
+
+Clinic Agent:
+Yes, please provide the phone number. You would like us to use for your record.
+
+Patient (Bot):
+It’s 509-260-3929.
+
+Clinic Agent:
+I can't proceed further right now but I can make sure our Clinic support team follows up with you. Please hold while I document your request.  Connecting you to a representative, please wait.  Hello, you've reached the pretty good. AI test line, goodbye.
+
+Patient (Bot):
+Wait, I just wanted to schedule an appointment!

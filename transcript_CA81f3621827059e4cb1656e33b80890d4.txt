@@ -1,0 +1,12 @@
+Clinic Agent:
+This call may be recorded for quality and training purposes.  Thanks for calling Pivot Point Orthopedics.  Part of pretty good AI. How may I help you today?
+
+Patient (Bot):
+Hi, this is John Doe. I need to cancel my appointment for tomorrow.
+
+Clinic Agent:
+Can you please provide your date of birth?
+
+Patient (Bot):
+Sure, it's July 4th, 2000.
+

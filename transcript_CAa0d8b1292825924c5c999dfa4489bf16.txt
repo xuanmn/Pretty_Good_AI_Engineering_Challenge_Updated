@@ -1,0 +1,45 @@
+Clinic Agent:
+this call may be recorded for quality and training purposes, but  Thanks for calling Pivot Point Orthopedics part of pretty good AI. How may I help you today?
+
+Patient (Bot):
+Hi, I’d like to request a refill for my pain medication, Ibuprofen 800mg, please.
+
+Clinic Agent:
+I see you're calling from the number we have on file. Am I speaking with Alex?
+
+Patient (Bot):
+Actually, this is Jamie Smith.
+
+Clinic Agent:
+Please provide your full date of birth.
+
+Patient (Bot):
+Sure, it’s March 12, 1990.
+
+Clinic Agent:
+Just to confirm, can you please spell your first and last name for me and your date of birth is March 12th 1990. Correct.
+
+Patient (Bot):
+Sure, it’s J-A-M-I-E S-M-I-T-H. Yes, that’s correct.
+
+Clinic Agent:
+Would you like me to look up your record using the phone number you have on file with us? If so, please provide that number, if you're not sure, I can confirm your name and date of birth again, which would you prefer?
+
+Patient (Bot):
+You can look it up with my phone number. It's the one you're calling me on.
+
+Clinic Agent:
+Out of your phone. Number is 509-260-3929 and your date of birth as March 12th 1990. Is that correct?
+
+Patient (Bot):
+Yes, that's correct.
+
+Clinic Agent:
+I can't proceed further right now that I can make sure our Clinic support team follows up with you. Would you like me to connect you to our patient support team?
+
+Patient (Bot):
+Yes, please connect me to the patient support team.
+
+Clinic Agent:
+Connecting you to a representative, please wait.  Hello, you've reached the pretty good. AI test line, goodbye.
+

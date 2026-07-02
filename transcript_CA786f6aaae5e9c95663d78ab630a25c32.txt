@@ -1,0 +1,18 @@
+Clinic Agent:
+This call may be recorded for quality and training purposes.  Thanks for calling Pivot Point Orthopedics part of pretty good AI. How may I help you today?
+
+Patient (Bot):
+Hi, my name is John Doe. I’d like to schedule a morning appointment, please.
+
+Clinic Agent:
+I see you're calling from the number we have on file. Am I speaking with Alex?
+
+Patient (Bot):
+No, this is John Doe.
+
+Clinic Agent:
+Please provide your full name and date of birth.  I need your full name including your last name and your date of birth. Could you please provide both?
+
+Patient (Bot):
+Sure, it’s John Doe and my date of birth is July 4th, 2000.
+

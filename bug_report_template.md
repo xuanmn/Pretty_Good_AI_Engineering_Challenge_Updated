@@ -9,7 +9,8 @@
 8. It seems the agent keeps ending the call after getting the DOB. 
 9. I changed the DOB on the system prompt and it still keeps ending the call after DOB.
 10. Changed the system prompt by giving it the first name (Jamie Smith DOB March 12, 1990) and it got deeper into the conversation and the agent connected with a representive.
-
+11. I switched to the cancel appointment prompt with the name (Jamie Smith DOB March 12, 1990) and it was able to successfully cancel the appointment.
+12. Ran the test with general question asking about insurance, hours, and location and It was able to get all of the information.
 
 # Conclusion
 Based on these test calls the it the call agent tries to match the phone number with the inital name and DOB. If you change the system prompt to give another name and DOB but do not change the phone number the agent will just hang up the call. So intintally I had Jamie Smith DOB March 12, 1990 and making this call under these name connected me to what I wanted but after changing the prompt to Alex DOB July 4 2000 the agent will just end the call after the bot tells the DOB. It seems like the bot needs to be the same person with the same DOB and information that it's trying to simulate. 

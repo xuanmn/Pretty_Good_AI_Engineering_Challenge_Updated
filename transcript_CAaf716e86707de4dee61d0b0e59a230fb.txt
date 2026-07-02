@@ -1,0 +1,18 @@
+Clinic Agent:
+this call may be recorded for quality and training purposes, but  Thanks for calling Pivot Point Orthopedics part of pretty good AI. How may I help you today?
+
+Patient (Bot):
+Hi there! I have a couple of quick questions. Do you accept Blue Cross Blue Shield insurance?
+
+Clinic Agent:
+Yes, Pivot Point Orthopedics, accepts most insurance plans including Blue. Cross Blue Shield is there anything else I can help with regarding your insurance or care?
+
+Patient (Bot):
+That's great to hear! Can you also let me know your hours of operation?
+
+Clinic Agent:
+Our clinic is open Monday Tuesday and Thursday from 9:00 a.m. to 4:00 p.m. Wednesday from 12:00 p.m. to 7:00 p.m. and Friday from 9:00 a.m. to 12:00 p.m. Let me know if you need anything else.
+
+Patient (Bot):
+Thanks for that information! One last thing, where are you located?
+

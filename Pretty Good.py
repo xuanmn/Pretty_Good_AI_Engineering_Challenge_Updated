@@ -2,6 +2,7 @@ from twilio.rest import Client
 from flask import Flask, request, redirect, session
 from twilio.twiml.voice_response import VoiceResponse, Gather
 import os
+import urllib.request
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -19,18 +20,25 @@ client = Client(twilio_sid, twilio_auth_token)
 openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 SYSTEM_PROMPT = (
-    "You are simulating a patient named Alex Rivera (Date of Birth: October 12, 1988) calling your doctor's clinic. "
-    "Your goal is to reschedule your existing appointment from next Thursday at 2 PM to any time on Friday morning. "
+    "You are simulating a new patient calling a doctor's clinic for the first time. "
+    "Your goal is to schedule a general check-up because you recently moved to the area. "
+    "You want an appointment sometime next week, preferably in the morning. "
     "You are speaking on a phone call with an AI receptionist. "
     "Keep your responses short, conversational, and extremely natural for a voice call (typically 1-2 sentences maximum). "
     "Do not output markdown, lists, bullet points, or special characters. Speak directly as the patient."
 )
 
+
+# Dictionary to hold conversation histories by CallSid
+call_histories = {}
+
 @app.route("/voice", methods=['POST'])
 def voice():
     """Respond to incoming phone calls and start the gathering loop."""
+    call_sid = request.form.get('CallSid')
+    
     # Reset conversation history for the new call session
-    session['history'] = []
+    call_histories[call_sid] = []
     
     resp = VoiceResponse()
     # Gather speech from the agent who answers
@@ -43,6 +51,7 @@ def voice():
 @app.route("/processSpeech", methods=['POST'])
 def processSpeech():
     """Process the caller's speech input and generate an LLM response."""
+    call_sid = request.form.get('CallSid')
     speechText = request.form.get('SpeechResult')
     resp = VoiceResponse()
 
@@ -55,7 +64,7 @@ def processSpeech():
     print(f"Clinic Agent said: {speechText}")
 
     # Retrieve and update conversation history
-    history = session.get('history', [])
+    history = call_histories.get(call_sid, [])
     history.append({"role": "user", "content": speechText})
 
     try:
@@ -71,7 +80,7 @@ def processSpeech():
 
         # Save our response to history
         history.append({"role": "assistant", "content": patient_response})
-        session['history'] = history
+        call_histories[call_sid] = history
 
         # Speak response and gather next input
         resp.say(patient_response)
@@ -93,11 +102,53 @@ def errors():
     print(f"An error occurred: {errorCode}")
     return "Error received", 200
 
+@app.route("/status", methods=['POST'])
+def status():
+    """Save the transcript when the call completes."""
+    call_sid = request.form.get('CallSid')
+    call_status = request.form.get('CallStatus')
+    
+    if call_status in ['completed', 'failed', 'busy', 'no-answer', 'canceled']:
+        history = call_histories.get(call_sid, [])
+        if history:
+            filename = f"transcript_{call_sid}.txt"
+            with open(filename, "w") as f:
+                for msg in history:
+                    role = "Clinic Agent" if msg["role"] == "user" else "Patient (Bot)"
+                    f.write(f"{role}:\n{msg['content']}\n\n")
+            print(f"\n✅ Saved transcript to {filename}")
+            
+    return "OK", 200
+
+@app.route("/recording", methods=['POST'])
+def recording():
+    """Download the MP3 recording when it becomes available."""
+    call_sid = request.form.get('CallSid')
+    recording_url = request.form.get('RecordingUrl')
+    
+    if recording_url:
+        # Twilio recordings can be downloaded as mp3 by appending .mp3
+        mp3_url = f"{recording_url}.mp3"
+        filename = f"recording_{call_sid}.mp3"
+        print(f"\n⬇️ Downloading recording to {filename}...")
+        try:
+            urllib.request.urlretrieve(mp3_url, filename)
+            print(f"✅ Successfully saved {filename}")
+        except Exception as e:
+            print(f"❌ Failed to download recording: {e}")
+            
+    return "OK", 200
+
 if __name__ == "__main__":
+    base_url = twilioURLVoice.rsplit('/', 1)[0]  # Gets the domain from the webhook URL
     call = client.calls.create(
         to=testNumber,
         from_=twilioNumber,
         url=twilioURLVoice,
+        status_callback=f"{base_url}/status",
+        status_callback_event=['completed'],
+        recording_status_callback=f"{base_url}/recording",
+        recording_status_callback_event=['completed'],
         record=True
     )
     app.run(port=5000)

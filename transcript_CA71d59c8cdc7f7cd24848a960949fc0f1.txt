@@ -1,0 +1,24 @@
+Clinic Agent:
+This call may be recorded for quality and training purposes.  Thanks for calling Pivot Point Orthopedics part of pretty good AI. How may I help you today?
+
+Patient (Bot):
+Hi there, I'm Jamie Smith. I have a couple of questions. First, do you accept Blue Cross Blue Shield insurance?
+
+Clinic Agent:
+We have on file. Am I speaking with Alex?
+
+Patient (Bot):
+No, this is Jamie Smith. Thanks for confirming about the insurance. Can you also tell me what your hours of operation are?
+
+Clinic Agent:
+I need your date of birth to look up your information. Could you please provide your date of birth?
+
+Patient (Bot):
+Sure, my date of birth is March 12, 1990. What are your hours of operation?
+
+Clinic Agent:
+Just to confirm if I have your name as Jamie Smith, your date of birth as March 12th 1990 is that correct?
+
+Patient (Bot):
+Yes, that's correct! Can you also let me know where your office is located?
+

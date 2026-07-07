@@ -1,0 +1,48 @@
+Clinic Agent:
+This call may be recorded for quality and training purposes.  Thanks for calling Pivot Point Orthopedics part of pretty good AI. How may I help you today?
+
+Patient (Bot):
+Hi, I need to cancel my appointment for tomorrow. I got called into work unexpectedly and can't reschedule right now.
+
+Clinic Agent:
+I see you're calling from the number we have on file. Am I speaking with Alex?
+
+Patient (Bot):
+Actually, it's Jamie Smith.
+
+Clinic Agent:
+Please provide your date of birth.
+
+Patient (Bot):
+It's March 12, 1990.
+
+Clinic Agent:
+Just to confirm, I have your name as Jamie Smith in your date of birth as March 12th 1990. Is that correct? If so please spell your first and last name for me
+
+Patient (Bot):
+Yes, that's correct. J-A-M-I-E S-M-I-T-H.
+
+Clinic Agent:
+Would you like to use your phone number to look up your record if so, please provide the number you have on file with us, if you're not sure, I can confirm your name and date of birth again, which would you prefer?
+
+Patient (Bot):
+I’d rather just go with my name and date of birth again.
+
+Clinic Agent:
+Please spell your first and last name for me and confirm your date of birth 1 more time.
+
+Patient (Bot):
+Sure, it’s J-A-M-I-E S-M-I-T-H and my date of birth is March 12, 1990.
+
+Clinic Agent:
+I have your phone number as 5092603929 and your date of birth as March 12th 1990. Is that correct?
+
+Patient (Bot):
+Yes, that's correct.
+
+Clinic Agent:
+I can't proceed further right now but I can make sure our Clinic support team follows up with you. Please hold while I document your request.  Connecting you to a representative, please wait.  Hello, you've reached the pretty good. AI test line, goodbye.
+
+Patient (Bot):
+Wait, I just wanted to cancel my appointment.
+

@@ -1,0 +1,51 @@
+Clinic Agent:
+This call may be recorded for quality and training purposes.  Thanks for calling Pivot Point Orthopedics part of pretty good AI. How may I help you today?
+
+Patient (Bot):
+Hi, this is Jamie Smith. I'm calling to request a refill for my Ibuprofen 800mg prescription. Can you send it to the CVS on Main Street, please?
+
+Clinic Agent:
+I need to confirm your identity before. Moving forward, please provide. Your full name and date of birth.
+
+Patient (Bot):
+My name is Jamie Smith, and my date of birth is March 12, 1990.
+
+Clinic Agent:
+Just to confirm, can you please spell your first, and last name for me?
+
+Patient (Bot):
+Sure, it's J-a-m-i-e S-m-i-t-h.
+
+Clinic Agent:
+Thanks for spelling that out. Just to confirm your name is spelled j. A m, i e s m, i d h and your date of birth is March 12th. 1990, is that correct?
+
+Patient (Bot):
+Actually, my last name is spelled S-m-i-t-h, not S-m-i-d-h. But yes, my date of birth is March 12, 1990.
+
+Clinic Agent:
+Would you like me to look up your record using your phone number? If so, please provide the number you have on file with us. If you're not sure, I can confirm your name and date of birth again, which would you prefer?
+
+Patient (Bot):
+You can look up my record using my phone number. It's the one you have on file.
+
+Clinic Agent:
+Could you please say the phone number? You have on file with us? This helps me make sure I have the right record.
+
+Patient (Bot):
+Sure, my phone number is 555-123-4567.
+
+Clinic Agent:
+I have your phone number as 5551234567 and your date of birth as March 12th 1990. Is that correct?
+
+Patient (Bot):
+Yes, that's correct.
+
+Clinic Agent:
+I can't predict further right now that I can make sure our Clinic support team follows up with you. Would you like me to connect you to our patient support team?
+
+Patient (Bot):
+Yes, please connect me to the patient support team. Thank you!
+
+Clinic Agent:
+Representative, please wait.  Hello, you've reached the pretty good. AI test line, goodbye.
+

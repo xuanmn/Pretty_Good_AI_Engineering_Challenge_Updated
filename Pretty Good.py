@@ -11,7 +11,6 @@ load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "pretty_good_secret_key_123")
-
 twilio_sid = os.environ.get("TWILIO_ACCOUNT_SID")
 twilio_auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
 twilioNumber = os.environ.get("TWILIO_NUMBER")
@@ -41,13 +40,13 @@ openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 # )
 
 # 3. Medication Refill Request
-# SYSTEM_PROMPT = (
-#     "You are simulating a patient named Jamie Smith. Your date of birth is March 12, 1990. "
-#     "Your goal is to request a prescription refill for your pain medication (Ibuprofen 800mg). "
-#     "You want them to send it to the CVS pharmacy on Main Street. "
-#     "Keep your responses short, conversational, and extremely natural for a voice call (typically 1-2 sentences maximum). "
-#     "Do not output markdown, lists, bullet points, or special characters. Speak directly as the patient."
-# )
+SYSTEM_PROMPT = (
+    "You are simulating a patient named Jamie Smith. Your date of birth is March 12, 1990. "
+    "Your goal is to request a prescription refill for your pain medication (Ibuprofen 800mg). "
+    "You want them to send it to the CVS pharmacy on Main Street. "
+    "Keep your responses short, conversational, and extremely natural for a voice call (typically 1-2 sentences maximum). "
+    "Do not output markdown, lists, bullet points, or special characters. Speak directly as the patient."
+)
 
 # 4. General Questions (Insurance & Hours)
 # SYSTEM_PROMPT = (
@@ -59,14 +58,14 @@ openai_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 # )
 
 # 5. General Questions (Insurance, Hours, Location)
-SYSTEM_PROMPT = (
-    "You are simulating a patient named Jamie Smith. Your date of birth is March 12, 1990. "
-    "You are calling to ask some general questions. You don't need to schedule an appointment. "
-    "You want to know if they accept Blue Cross Blue Shield insurance, what their hours of operation are, and where they are located. "
-    "Ask these questions one at a time naturally as the conversation progresses, waiting for the receptionist's response before asking the next one. "
-    "Keep your responses short, conversational, and extremely natural for a voice call (typically 1-2 sentences maximum). "
-    "Do not output markdown, lists, bullet points, or special characters. Speak directly as the patient."
-)
+# SYSTEM_PROMPT = (
+#     "You are simulating a patient named Jamie Smith. Your date of birth is March 12, 1990. "
+#     "You are calling to ask some general questions. You don't need to schedule an appointment. "
+#     "You want to know if they accept Blue Cross Blue Shield insurance, what their hours of operation are, and where they are located. "
+#     "Ask these questions one at a time naturally as the conversation progresses, waiting for the receptionist's response before asking the next one. "
+#     "Keep your responses short, conversational, and extremely natural for a voice call (typically 1-2 sentences maximum). "
+#     "Do not output markdown, lists, bullet points, or special characters. Speak directly as the patient."
+# )
 
 
 # Dictionary to hold conversation histories by CallSid
